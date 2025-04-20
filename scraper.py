@@ -9,7 +9,7 @@ import os
 
 
 # --- CONFIG ---
-API_KEY = "696d143304a2a066dd94f633e0586de3"
+API_KEY = os.getenv("API_KEY")
 conn = psycopg2.connect(
     dbname=os.getenv("PGDATABASE"),
     user=os.getenv("PGUSER"),
