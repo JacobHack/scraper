@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY scraper.py .
 
-CMD ["python", "scrape_air_data.py"]
+CMD ["python", "scraper.py"]

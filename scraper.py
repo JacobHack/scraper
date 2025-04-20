@@ -3,16 +3,20 @@ import psycopg2
 import json
 from datetime import datetime, timedelta
 import time
+import os
+
+
+
 
 # --- CONFIG ---
-API_KEY = "your_api_key_here"
-DB_CONFIG = {
-    "dbname": "your_db",
-    "user": "your_user",
-    "password": "your_password",
-    "host": "your_host",
-    "port": 5432
-}
+API_KEY = "696d143304a2a066dd94f633e0586de3"
+conn = psycopg2.connect(
+    dbname=os.getenv("PGDATABASE"),
+    user=os.getenv("PGUSER"),
+    password=os.getenv("PGPASSWORD"),
+    host=os.getenv("PGHOST"),
+    port=int(os.getenv("PGPORT", 5432))
+)
 LAT = 44.9369
 LON = -123.0280
 
